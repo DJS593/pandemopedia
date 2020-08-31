@@ -1,32 +1,37 @@
 {
-  "name": "project3",
+  "name": "pandemopedia",
   "version": "1.0.0",
-  "description": "",
+  "description": "![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)",
   "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "heroku-postbuild": "cd client && npm run build"
+    "heroku-postbuild": "cd client && npm run build",
+    "webpack": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicolewallace09/project3.git"
+    "url": "git+https://github.com/nicolewallace09/pandemopedia.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nicolewallace09/project3/issues"
+    "url": "https://github.com/nicolewallace09/pandemopedia/issues"
   },
-  "homepage": "https://github.com/nicolewallace09/project3#readme",
   "dependencies": {
     "if-env": "^1.0.4",
     "json-web-token": "^3.2.0",
     "recharts": "^1.8.5"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.3.0",
+    "webpack": "^4.44.1",
+    "webpack-bundle-analyzer": "^3.8.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-pwa-manifest": "^4.2.0"
   }
 }
